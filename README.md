@@ -1,5 +1,9 @@
 # philiprehberger-req-check
 
+[![Tests](https://github.com/philiprehberger/py-req-check/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-req-check/actions/workflows/publish.yml)
+[![PyPI version](https://img.shields.io/pypi/v/philiprehberger-req-check.svg)](https://pypi.org/project/philiprehberger-req-check/)
+[![License](https://img.shields.io/github/license/philiprehberger/py-req-check)](LICENSE)
+
 Detect unused packages in requirements.txt by scanning imports.
 
 ## Install
