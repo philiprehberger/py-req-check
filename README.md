@@ -56,6 +56,14 @@ Exits with code 1 if unused packages are found.
 | `scan_imports(path)` | Scan Python files for top-level import names |
 | `read_requirements(path)` | Read package names from requirements.txt |
 
+
+## Development
+
+```bash
+pip install -e .
+python -m pytest tests/ -v
+```
+
 ## License
 
 MIT
