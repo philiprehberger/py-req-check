@@ -24,9 +24,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/philiprehberger/py-req-check"
+Homepage = "https://github.com/philiprehberger/py-req-check#readme"
 Repository = "https://github.com/philiprehberger/py-req-check"
 Issues = "https://github.com/philiprehberger/py-req-check/issues"
+Changelog = "https://github.com/philiprehberger/py-req-check/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/philiprehberger_req_check"]

@@ -6,7 +6,7 @@
 
 Detect unused packages in requirements.txt by scanning imports.
 
-## Install
+## Installation
 
 ```bash
 pip install philiprehberger-req-check
