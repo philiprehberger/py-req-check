@@ -3,6 +3,7 @@
 [![Tests](https://github.com/philiprehberger/py-req-check/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-req-check/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-req-check.svg)](https://pypi.org/project/philiprehberger-req-check/)
 [![License](https://img.shields.io/github/license/philiprehberger/py-req-check)](LICENSE)
+[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
 
 Detect unused packages in requirements.txt by scanning imports.
 
