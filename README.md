@@ -2,8 +2,7 @@
 
 [![Tests](https://github.com/philiprehberger/py-req-check/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-req-check/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-req-check.svg)](https://pypi.org/project/philiprehberger-req-check/)
-[![License](https://img.shields.io/github/license/philiprehberger/py-req-check)](LICENSE)
-[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/py-req-check)](https://github.com/philiprehberger/py-req-check/commits/main)
 
 Detect unused packages in requirements.txt by scanning imports.
 
@@ -57,7 +56,6 @@ Exits with code 1 if unused packages are found.
 | `scan_imports(path)` | Scan Python files for top-level import names |
 | `read_requirements(path)` | Read package names from requirements.txt |
 
-
 ## Development
 
 ```bash
@@ -65,6 +63,24 @@ pip install -e .
 python -m pytest tests/ -v
 ```
 
+## Support
+
+If you find this project useful:
+
+⭐ [Star the repo](https://github.com/philiprehberger/py-req-check)
+
+🐛 [Report issues](https://github.com/philiprehberger/py-req-check/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+💡 [Suggest features](https://github.com/philiprehberger/py-req-check/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+❤️ [Sponsor development](https://github.com/sponsors/philiprehberger)
+
+🌐 [All Open Source Projects](https://philiprehberger.com/open-source-packages)
+
+💻 [GitHub Profile](https://github.com/philiprehberger)
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/philiprehberger)
+
 ## License
 
-MIT
+[MIT](LICENSE)
