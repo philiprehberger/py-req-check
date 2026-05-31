@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 (2026-05-30)
+
+- Add `find_missing()` to find imports used in code but not declared in requirements.txt
+- Add `compare()` for diffing two requirements files
+
 ## 0.1.6 (2026-03-31)
 
 - Standardize README to 3-badge format with emoji Support section

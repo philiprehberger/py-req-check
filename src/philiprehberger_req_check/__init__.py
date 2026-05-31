@@ -6,7 +6,7 @@ import ast
 import sys
 from pathlib import Path
 
-__all__ = ["check", "scan_imports", "read_requirements"]
+__all__ = ["check", "scan_imports", "read_requirements", "find_missing", "compare"]
 
 # Common mapping of PyPI package names to import names where they differ
 _PACKAGE_TO_IMPORT: dict[str, str] = {
@@ -193,3 +193,53 @@ def check(
             unused.append(pkg)
 
     return unused
+
+
+def find_missing(
+    requirements_path: str | Path,
+    source_dir: str | Path,
+) -> set[str]:
+    """Return imports used in *source_dir* but NOT declared in *requirements_path*.
+
+    Inverse of check(), which finds unused packages. Stdlib imports are
+    excluded. Package name normalization (PyPI <-> import name) is applied
+    so e.g. 'pyyaml' in requirements satisfies 'import yaml' in source.
+
+    Args:
+        requirements_path: Path to requirements.txt file.
+        source_dir: Directory (or file) to scan for Python imports.
+
+    Returns:
+        Set of top-level import names used in source but not declared.
+    """
+    used_imports = scan_imports(source_dir)
+    used_imports = {name for name in used_imports if name not in _STDLIB}
+
+    declared_packages = read_requirements(requirements_path)
+    declared_imports = {_import_name_for_package(pkg) for pkg in declared_packages}
+
+    return used_imports - declared_imports
+
+
+def compare(
+    req_a: str | Path,
+    req_b: str | Path,
+) -> dict[str, list[str]]:
+    """Diff two requirements files by package name.
+
+    Args:
+        req_a: Path to the first requirements file.
+        req_b: Path to the second requirements file.
+
+    Returns:
+        Dict with keys "added" (in b but not a), "removed" (in a but not b),
+        and "common" (in both). Each value is a sorted list of package names.
+    """
+    set_a = set(read_requirements(req_a))
+    set_b = set(read_requirements(req_b))
+
+    return {
+        "added": sorted(set_b - set_a),
+        "removed": sorted(set_a - set_b),
+        "common": sorted(set_a & set_b),
+    }

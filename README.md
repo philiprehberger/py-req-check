@@ -40,6 +40,26 @@ packages = read_requirements("requirements.txt")
 print(packages)  # ["requests", "flask", "pillow"]
 ```
 
+### Finding missing dependencies
+
+```python
+from philiprehberger_req_check import find_missing
+
+# Imports used in code but NOT declared in requirements.txt
+missing = find_missing("requirements.txt", "./src")
+print(missing)  # {"yaml"}
+```
+
+### Comparing requirements
+
+```python
+from philiprehberger_req_check import compare
+
+diff = compare("requirements.old.txt", "requirements.new.txt")
+print(diff)
+# {"added": ["httpx"], "removed": ["yaml"], "common": ["requests"]}
+```
+
 ### CLI
 
 ```bash
@@ -55,6 +75,8 @@ Exits with code 1 if unused packages are found.
 | `check(path, *, requirements=None)` | Find unused packages by comparing imports against requirements |
 | `scan_imports(path)` | Scan Python files for top-level import names |
 | `read_requirements(path)` | Read package names from requirements.txt |
+| `find_missing(requirements_path, source_dir)` | Find imports used in source but not declared in requirements |
+| `compare(req_a, req_b)` | Diff two requirements files into added / removed / common |
 
 ## Development
 
